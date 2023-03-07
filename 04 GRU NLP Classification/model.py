@@ -28,8 +28,8 @@ class Model(nn.Module):
         # [bs, sl, hidden_size] -> [bs, k]
         k = sl * hidden_size
         
-        # [bs, k] -> [bs, 768] -> [bs, 4]
-        self.seq = nn.Sequential(nn.Linear(k, 768), nn.LeakyReLU(), nn.Linear(768, 4), nn.LogSoftmax(dim=-1))
+        # [bs, k] -> [bs, 128] -> [bs, 4]
+        self.seq = nn.Sequential(nn.Linear(k, 128), nn.LeakyReLU(), nn.Linear(128, 4), nn.LogSoftmax(dim=-1))
 
     def forward(self, x):
         # x: [bs, sl]
