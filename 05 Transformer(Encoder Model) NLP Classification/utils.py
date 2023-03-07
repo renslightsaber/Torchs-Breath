@@ -99,6 +99,12 @@ def make_plot(result, stage = "Loss"):
     
     plt.title(f"Train/Valid {stage} History", fontsize = 20)
     
+    ## Modified for converting Type
+    if type(result[trains][0]) == torch.Tensor:
+        result[trains] = [num.detach().cpu().item() for num in result[trains]]
+        result[valids] = [num.detach().cpu().item() for num in result[valids]]
+    
+    
     plt.plot(
         range(0, len(result[trains][plot_from:])), 
         result[trains][plot_from:], 
