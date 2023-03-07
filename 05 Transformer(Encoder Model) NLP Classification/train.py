@@ -103,10 +103,10 @@ def main(config):
         train_one_epoch = new_trainer.train_one_epoch
         valid_one_epoch = new_trainer.valid_one_epoch
         run_train = new_trainer.run_train
-        device = torch.device("cpu")
+        # device = torch.device("cpu")
         print("Trainer option: ", config.trainer_type)
         print("Device", device)
-        print("There is no option when using torchmetrics on M1 Mac: Only CPU Right now")
+        # print("There is no option when using torchmetrics on M1 Mac: Only CPU Right now")
     else:
         train_one_epoch = original_trainer.train_one_epoch
         valid_one_epoch = original_trainer.valid_one_epoch
