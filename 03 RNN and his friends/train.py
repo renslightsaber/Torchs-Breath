@@ -20,7 +20,7 @@ import ast
 def define():
     p = argparse.ArgumentParser()
 
-    p.add_argument('--data_path', type = str, default = "./data/bitstampUSD_1-min_data_2012-01-01_to_2021-03-31.csv", help="Data Path")
+    p.add_argument('--data_path', type = str, default = "./data/bitcoin-historical-data.csv.csv", help="Data Path")
     p.add_argument('--percent', type = float, default = 0.01, help="Data Percent for train and inference")
 
     p.add_argument('--model', type = str, default = "GRU", help="Which RNN Model?")
