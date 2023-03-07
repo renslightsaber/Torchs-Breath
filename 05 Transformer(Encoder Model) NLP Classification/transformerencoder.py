@@ -8,14 +8,14 @@ from encoder import *
 class TransformerEncoderModel(nn.Module):
     def __init__(self, 
                  input_dim, 
-                 sl = 90,
-                 max_len= 100,
-                 hid_dim = 256,
-                 pf_dim = 512, 
-                 n_heads = 8,
-                 n_layers = 6, 
-                 dropout = 0.1, 
-                 device = torch.device("mps") if torch.backends.mps.is_available() else torch.device("cpu")):
+                 sl,
+                 max_len,
+                 hid_dim,
+                 pf_dim, 
+                 n_heads,
+                 n_layers, 
+                 dropout, 
+                 device):
         super().__init__()
         self.device = device
         self.dropout = nn.Dropout(dropout)
