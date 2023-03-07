@@ -115,8 +115,7 @@ def main(config):
 
     # Model
     model = Model(input_dim = input_dim, emb_dim = config.emb_dim, hidden_size = config.hidden_size, num_layers = config.num_layers, 
-                  sl = config.sl, dropout = config.dropout, device =device)
-    model = model.to(device)
+                  sl = config.sl, dropout = config.dropout, device =device).to(device)
     print(model)
     print()
 
