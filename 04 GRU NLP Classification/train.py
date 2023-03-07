@@ -39,8 +39,8 @@ def define():
 
     p.add_argument('--sl', type = int, default = 90, help="Sequence Length")
 
-    p.add_argument('--emb_dim', type = int, default = 256 * 2, help="emb_dim")
-    p.add_argument('--hidden_size', type = int, default = 512 * 2, help="hidden_size")
+    p.add_argument('--emb_dim', type = int, default = 128, help="emb_dim")
+    p.add_argument('--hidden_size', type = int, default = 128 * 2, help="hidden_size")
     p.add_argument('--num_layers', type = int, default = 2, help="Number of GRU's Layers")
 
     p.add_argument('--device', type = str, default = "mps", help="CUDA or MPS or CPU?")
