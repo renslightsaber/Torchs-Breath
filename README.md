@@ -1,2 +1,2 @@
-# Torch-s-Breath
+# Torchs-Breath
 Torch's Breath on Github
