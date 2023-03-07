@@ -21,7 +21,7 @@ def define():
     p = argparse.ArgumentParser()
 
     p.add_argument('--data_path', type = str, default = "./data/bitcoin-historical-data.csv", help="Data Path")
-    p.add_argument('--percent', type = float, default = 0.01, help="Data Percent for train and inference")
+    p.add_argument('--percent', type = float, default = 1, help="Data Percent for train and inference")
 
     p.add_argument('--model', type = str, default = "GRU", help="Which RNN Model?")
     p.add_argument('--hidden_size', type = int, default = 100, help="Number of RNN Model's Hidden Size")
