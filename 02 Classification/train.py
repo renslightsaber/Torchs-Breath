@@ -27,7 +27,6 @@ def define():
 
     p.add_argument('--nodes', type = str, default = '[16, 32]', help="List of Nodes: List of Two Ints in this Task")
     p.add_argument('--sample', type = bool, default = True, help="Show Sample Image")
-    p.add_argument('--grad_clipping', type = bool, default = False, help="Gradient Clipping")
     p.add_argument('--bs', type = int, default = 128, help="Batch Size")
     p.add_argument('--ratio', type = float, default = 0.7, help="Ratio of Train, Valid ")
     p.add_argument('--device', type = str, default = "mps", help="CUDA or MPS")
@@ -81,7 +80,7 @@ def main(config):
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
     print("Optimizer: ", optimizer)
     
-    result, model = run_train(model, train_loader, valid_loader, loss_fn, optimizer, device, n_epochs= config.n_epochs) 
+    result, model = run_train(model, train_loader, valid_loader, loss_fn, optimizer, n_classes, device, n_epochs= config.n_epochs) 
 
     # Visualization
     make_plot(result, stage = "Loss")
