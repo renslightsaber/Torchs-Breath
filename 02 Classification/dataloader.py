@@ -1,15 +1,8 @@
 import numpy as np
 import pandas as pd
 
-# from sklearn.datasets import fetch_california_housing
-
 import torch
 from torch.utils.data import Dataset, DataLoader
-
-# import torchvision 
-# from torchvision import datasets, transforms
-
-# train_data = datasets.CIFAR10('./data', train = True, download=True, transform= transforms.ToTensor())
 
 class MyDataset(Dataset):
     def __init__(self, 
@@ -55,3 +48,4 @@ def prepare_loaders(train_data, ratio = .6, bs = 128):
   
   print("DataLoader Completed")
   return train_loader, valid_loader
+
