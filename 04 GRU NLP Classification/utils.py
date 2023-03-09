@@ -7,7 +7,7 @@ import torch.nn as nn
 import matplotlib.pyplot as plt
 
 
-## Data
+################# Data ######################
 def dacon_competition_data( base_path = './data/', test_and_ss = False):
 
     train = pd.read_csv(base_path + 'train.csv')
@@ -25,7 +25,7 @@ def dacon_competition_data( base_path = './data/', test_and_ss = False):
 
 
 
-## Mecab을 사용해봅시다. 
+########## Mecab Tokenizer ################
 from konlpy.tag import Mecab
 import re
 
@@ -66,7 +66,7 @@ def text_pre(text, tokenizer = 'morphs'):
     result = [token for token in tokens if token not in SW]
     return result 
 
-## GETBOW
+################## GETBOW ########################
 def getbow(corpus, tokenizer):
     # corpus: [sentence1, sentence2, ....]
     bow = {'<PAD>': 0, '<BOS>': 1, '<EOS>':2}
@@ -78,7 +78,7 @@ def getbow(corpus, tokenizer):
 
     return bow
 
-
+################# Make Plot #######################
 def make_plot(result, stage = "Loss"):
     ## Train/Valid History
     plot_from = 0
