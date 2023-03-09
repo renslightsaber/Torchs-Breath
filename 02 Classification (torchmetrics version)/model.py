@@ -3,7 +3,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-
 class CNNModel(nn.Module):
     def __init__(self, nodes = [16, 32]):
         super().__init__()
@@ -36,3 +35,5 @@ class CNNModel(nn.Module):
         x =  self.pool(self.fc2(self.fc1(x)))
         x = torch.flatten(x, 1)
         return self.seq(x)
+    
+    
