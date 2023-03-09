@@ -142,11 +142,7 @@ def main(config):
 if __name__ == '__main__':
     config = define()
     main(config)
-    ## new_trainer (CPU Only)
-    # python train.py --device cuda --hidden_size 256 --emb_dim 128 --bs 64 --trainer_type new --n_epochs 3
-    # torchmetrics is not friendly with mps. This is why cpu
-
-    ## Original trainer
-    # python train.py --device cpu --hidden_size 256 --emb_dim 128  --bs 64 --trainer_type original --n_epochs 3
-    # M1: Only CPU Mode Works, while MPS Mode doesn't work 
-    # CUDA: Works
+    
+    
+    
+    
