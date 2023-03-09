@@ -1,5 +1,5 @@
 # 02 Classification (torchmetrics)
- - [CIFAR10](https://pytorch.org/vision/main/generated/torchvision.datasets.CIFAR10.html)
+ - Data:[CIFAR10](https://pytorch.org/vision/main/generated/torchvision.datasets.CIFAR10.html)
 
 ## Velog 
   - [[토치의 호흡] 02 CLASSIFICATION](https://velog.io/@heiswicked/토치의-호흡-02-CLASSIFICATION) 
