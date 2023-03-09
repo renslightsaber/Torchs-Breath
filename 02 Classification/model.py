@@ -5,10 +5,11 @@ import torch.nn as nn
 
 
 class CNNModel(nn.Module):
-    def __init__(self, nodes = [16, 32]):
+    def __init__(self, nodes):
         super().__init__()
 
         # x: [bs, 3, 32, 32]
+        # What if nodes = [16, 32]
         
         input_channel = 3
         middle, out_channel = nodes[0], nodes[1]
@@ -36,3 +37,5 @@ class CNNModel(nn.Module):
         x =  self.pool(self.fc2(self.fc1(x)))
         x = torch.flatten(x, 1)
         return self.seq(x)
+    
+    
