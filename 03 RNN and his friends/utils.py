@@ -1,4 +1,6 @@
-import numpy
+import numpy as np
+import pandas as pd
+
 import torch
 import torch.nn as nn
 
@@ -6,9 +8,8 @@ import matplotlib.pyplot as plt
 
 
 def make_plot(result, stage = "Loss"):
-    ## Train/Valid History
+    
     plot_from = 0
-
     if stage == "Loss":
         trains = 'Train Loss'
         valids = 'Valid Loss'
@@ -16,6 +17,11 @@ def make_plot(result, stage = "Loss"):
         stage = "Trues vs Preds"
         trains = "Trues"
         valids = "Preds"
+        
+    ## Modified for converting Type
+    if type(result[trains][0]) == torch.Tensor:
+        result[trains] = [num.detach().cpu().item() for num in result[trains]]
+        result[valids] = [num.detach().cpu().item() for num in result[valids]]
 
     plt.figure(figsize=(10, 6))
     
@@ -38,4 +44,5 @@ def make_plot(result, stage = "Loss"):
         plt.yscale('log')
     plt.grid(True)
     plt.show()
+    
 
