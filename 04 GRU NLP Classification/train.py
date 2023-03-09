@@ -10,7 +10,7 @@ from torch.utils.data import Dataset, DataLoader
 
 from sklearn.preprocessing import LabelEncoder
 
-from tqdm import tqdm 
+from tqdm.auto import tqdm, trange
 
 from model import *
 from dataloader import *
