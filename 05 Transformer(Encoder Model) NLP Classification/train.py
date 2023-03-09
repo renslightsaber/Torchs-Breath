@@ -9,15 +9,10 @@ from torch.utils.data import Dataset, DataLoader
 
 from sklearn.preprocessing import LabelEncoder
 
-# torchvision - CIFAR10 데이터를 사용하기 위해서
-import torchvision
-from torchvision import transforms, datasets
-
+from tqdm.auto import tqdm, trange
 
 from transformerencoder import *
 from dataloader import *
-# from new_trainer import *
-# from original_trainer import *
 
 import new_trainer 
 import original_trainer 
@@ -145,9 +140,3 @@ def main(config):
 if __name__ == '__main__':
     config = define()
     main(config)
-    ## new_trainer (CPU Only)
-    # python train.py --device cpu --n_epochs 5
-    # torchmetrics is not friendly with mps. This is why cpu
-
-    ## Original trainer
-    # python train.py --device mps --trainer_type original --hid_dim 128 --n_layers 4  --n_epochs 5
