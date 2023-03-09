@@ -6,7 +6,7 @@ import torch.nn as nn
 
 import torchmetrics
 
-from tqdm import tqdm
+from tqdm.auto import tqdm, trange
 
 
 # Train One Epoch
@@ -188,3 +188,4 @@ def run_train(model, train_loader, valid_loader, loss_fn, optimizer, device, n_c
     result["Valid F1"] = valid_f1s
     
     return result, model
+
