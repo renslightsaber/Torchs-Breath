@@ -3,7 +3,7 @@ import numpy as np
 import torch 
 import torch.nn as nn
 
-from tqdm import tqdm
+from tqdm.auto import tqdm, trange
 
 
 # Train One Epoch
@@ -30,7 +30,18 @@ def train_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_clas
         # backprop
         optimizer.zero_grad()
         loss.backward()
+        
+        # Gradient-Clipping | source: https://velog.io/@seven7724/Transformer-계열의-훈련-Tricks
+        max_norm = 5
+        if grad_clipping:
+            # print("Gradient Clipping Turned On | max_norm: ", max_norm)
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm)
+            
         optimizer.step()
+        
+        # Scheduler
+        if scheduler is not None:
+            scheduler.step()
         
         # 실시간 train_loss
         dataset_size += bs                           # 실시간으로 크기가 update
@@ -143,4 +154,5 @@ def run_train(model, train_loader, valid_loader, loss_fn, optimizer, device, n_c
     result["Valid Acc"] = valid_accs
     
     return result, model
+
             
