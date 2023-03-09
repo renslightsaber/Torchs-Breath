@@ -8,10 +8,7 @@ Pytorch를 처음 입문하는 분들에게는 상당한 어려움을 느끼게 
 ## Contents
  1. Regression
 
-
  2. Classification (including torchmetrics version)
-   - Velog: [[토치의 호흡] 02 CLASSIFICATION](https://velog.io/@heiswicked/토치의-호흡-02-CLASSIFICATION) 
-  - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1BCKTek0EGf5lq-mIKQVsj44afvD5pk5V?usp=sharing)
  
  3. RNN and his friends
    - Velog: [[토치의 호흡] 03 RNN and his friends PART 01](https://velog.io/@heiswicked/토치의-호흡-03-RNN-and-his-firends-PART-01) 
