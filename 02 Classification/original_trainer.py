@@ -1,13 +1,16 @@
+import copy
 import numpy as np
+import pandas as pd
+
+from tqdm.auto import tqdm, trange
 
 import torch 
 import torch.nn as nn
 
-from tqdm import tqdm
 
 
 # Train One Epoch
-def train_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_classes =None, scheduler = None, grad_clipping = False):
+def train_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_classes =None, scheduler = None):
     model.train()
     
     train_loss, dataset_size = 0,  0 # train loss, accuracy를 실시간으로 구현
@@ -88,7 +91,7 @@ def valid_one_epoch(model, dataloader, loss_fn, device, epoch, n_classes=None):
 
 
 # Run Train
-def run_train(model, train_loader, valid_loader, loss_fn, optimizer, device, n_classes=None, scheduler = None, grad_clipping = False, n_epochs = 50, print_iter = 10, early_stop = 20):
+def run_train(model, train_loader, valid_loader, loss_fn, optimizer, device, n_classes=None, scheduler = None, n_epochs = 50, print_iter = 10, early_stop = 20):
         
     result = dict()
     lowest_loss, lowest_epoch = np.inf, np.inf
