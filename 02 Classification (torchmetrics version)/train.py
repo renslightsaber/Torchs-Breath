@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 
+from tqdm.auto import tqdm, trange
+
 import matplotlib.pyplot as plt
 
 import torch
@@ -10,7 +12,6 @@ from torch.utils.data import Dataset, DataLoader
 # torchvision - CIFAR10 데이터를 사용하기 위해서
 import torchvision
 from torchvision import transforms, datasets
-
 
 from model import CNNModel
 from dataloader import *
