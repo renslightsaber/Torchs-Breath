@@ -80,7 +80,7 @@ def main(config):
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
     print("Optimizer: ", optimizer)
     
-    result, model = run_train(model, train_loader, valid_loader, loss_fn, optimizer, n_classes, device, n_epochs= config.n_epochs) 
+    result, model = run_train(model, train_loader, valid_loader, loss_fn, optimizer, device, n_classes, n_epochs= config.n_epochs, print_iter = 10, early_stop = 20) 
 
     # Visualization
     make_plot(result, stage = "Loss")
