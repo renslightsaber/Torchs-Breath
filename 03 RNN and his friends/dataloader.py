@@ -7,7 +7,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 
 class MyDataset(Dataset):
-    def __init__(self, df, days = 3):
+    def __init__(self, df, days):
         # df: pandas dataframe
         self.days = days
         
@@ -33,7 +33,7 @@ class MyDataset(Dataset):
     
 
 
-def prepare_loaders(df, sl, ratio = .7, bs = 2*128):
+def prepare_loaders(df, sl, ratio, bs):
 
     index_num = int(df.shape[0] * ratio)
     
@@ -51,3 +51,4 @@ def prepare_loaders(df, sl, ratio = .7, bs = 2*128):
 
     print(" DataLoader Completed ")
     return train_loader, valid_loader
+
