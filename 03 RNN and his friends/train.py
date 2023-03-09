@@ -1,3 +1,6 @@
+# import gc
+# import os
+
 import numpy as np
 import pandas as pd
 
@@ -7,6 +10,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
+from tqdm.auto import tqdm, trange
 
 from kaggle_dataset import *
 from dataloader import *
@@ -91,7 +95,6 @@ def main(config):
     print("Optimizer: ", optimizer)
     
     result, model = run_train(model, train_loader, valid_loader, loss_fn, optimizer, device, n_epochs = config.n_epochs,)
-                            # print_iter = 20, early_stop = 30)
         
     # Visualization
     make_plot(result, stage = "Loss")
@@ -103,4 +106,3 @@ def main(config):
 if __name__ == '__main__':
     config = define()
     main(config)
-    # python train.py --device mps --n_epochs 200
