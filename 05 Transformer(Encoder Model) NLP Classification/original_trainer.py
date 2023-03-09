@@ -1,12 +1,16 @@
+import gc
+import copy
+
 import numpy as np
+import pandas as pd
 
 import torch 
 import torch.nn as nn
 
-from tqdm import tqdm
+from tqdm.auto import tqdm, trange
 
 
-# Train One Epoch
+############### Train One Epoch ####################
 def train_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_classes =None, scheduler = None, grad_clipping = False):
     model.train()
     
@@ -25,7 +29,17 @@ def train_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_clas
         # backprop
         optimizer.zero_grad()
         loss.backward()
+        
+        # Gradient-Clipping | source: https://velog.io/@seven7724/Transformer-계열의-훈련-Tricks
+        max_norm = 5
+        if grad_clipping:
+            # print("Gradient Clipping Turned On | max_norm: ", max_norm)
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm)
+
         optimizer.step()
+
+        if scheduler is not None:
+            scheduler.step()
         
         # 실시간 train_loss
         dataset_size += bs                           # 실시간으로 크기가 update
@@ -47,7 +61,7 @@ def train_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_clas
     return train_epoch_loss, train_acc
 
 
-# Valid One Epoch
+########### Valid One Epoch #############
 @torch.no_grad()
 def valid_one_epoch(model, dataloader, loss_fn, device, epoch, n_classes=None):
     model.eval()
@@ -86,7 +100,7 @@ def valid_one_epoch(model, dataloader, loss_fn, device, epoch, n_classes=None):
     return valid_epoch_loss, val_acc
 
 
-# Run Train
+############### Run Train ##################
 def run_train(model, train_loader, valid_loader, loss_fn, optimizer, device, n_classes=None, scheduler = None, grad_clipping = False, n_epochs = 50, print_iter = 10, early_stop = 20):
         
     result = dict()
@@ -135,4 +149,7 @@ def run_train(model, train_loader, valid_loader, loss_fn, optimizer, device, n_c
     result["Valid Acc"] = valid_accs
     
     return result, model
+
+
+
             
