@@ -1,4 +1,5 @@
 # 01 Regression
+- Data: [fetch_california_housing](fetch_california_housing)
 
 ## Velog 
   - [[토치의 호흡] 01 REGRESSION](https://velog.io/@heiswicked/토치의-호흡-01-REGRESSION)
