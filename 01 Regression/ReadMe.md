@@ -1,10 +1,10 @@
-# Regression
+# 01 Regression
 
-## 01 Velog Links
+## Velog Links
   - [[토치의 호흡] 01 REGRESSION](https://velog.io/@heiswicked/토치의-호흡-01-REGRESSION)
   - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1HaqIvhwdPTBXTTuvjGG-IIrynUtJlZjg?usp=sharing) 
 
-## 02 About Github Code
+## About Github Code
  1. Jupyter Notebook이 아닌 Python Script로 생성
  2. CLI에서 파라미터 값을 다양하게 변화를 주어서 실험 가능
 
