@@ -1,7 +1,10 @@
 import numpy as np
+import pandas as pd
 
 import torch
 import torch.nn as nn
+
+
 
 class Model(nn.Module):
     def __init__(self, input_dim, emb_dim, hidden_size, num_layers, sl, dropout, device):
@@ -47,5 +50,6 @@ class Model(nn.Module):
         output = output.reshape(output.shape[0], -1)
         output = self.seq(output)
         # output: [bs, 4]
+        
         return output
     
