@@ -1,4 +1,4 @@
-# 02 Classification
+# 02 Classification (torchmetrics)
  - [CIFAR10](https://pytorch.org/vision/main/generated/torchvision.datasets.CIFAR10.html)
 
 ## Velog 
