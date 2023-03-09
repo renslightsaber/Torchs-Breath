@@ -6,7 +6,7 @@ import torch.nn as nn
 
 import torchmetrics
 
-from tqdm import tqdm
+from tqdm.auto import tqdm, trange
 
 
 # Train One Epoch
