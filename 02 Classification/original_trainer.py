@@ -7,8 +7,6 @@ from tqdm.auto import tqdm, trange
 import torch 
 import torch.nn as nn
 
-
-
 # Train One Epoch
 def train_one_epoch(model, dataloader, loss_fn, optimizer, device, epoch, n_classes =None, scheduler = None):
     model.train()
