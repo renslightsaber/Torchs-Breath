@@ -1,10 +1,13 @@
 import numpy as np
 
 import copy
+from copy import deepcopy
 
 import torch
 import torch.nn as nn
 
+
+######### Multi Head Attention ############
 class MultiHeadAttention(nn.Module):
     def __init__(self, 
                  hid_dim, 
@@ -57,6 +60,7 @@ class MultiHeadAttention(nn.Module):
         return x, attn_weights
     
 
+########### Attention #############
 class Attention:
     def __init__(self,
                  device,
@@ -91,3 +95,7 @@ class Attention:
     # 그래서 nn.Module을 상속받은 Class에서 forward와 동일한 효과가 나도록 해주기 위함이다.
     def __call__(self, q, k, v, mask = None):
         return self.forward(q, k, v, mask= mask)
+    
+    
+    
+    
