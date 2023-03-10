@@ -17,7 +17,7 @@ Pytorch를 처음 입문하는 분들에게는 상당한 어려움을 느끼게 
  - [Velog 토치의 호흡 시리즈](https://velog.io/@heiswicked/series/Torchs-Breath)
    - 같은 Task이지만, velog에서 안내된 코드보다 조금 더 어렵게 작성해보았다. (저도 성장은 해야죠..?)
    - Github에서는 Python Script(.py)로 작성하는 과정에서 모듈별로 코드가 분리되어있다. 
-    : Data Science 공부를 시작한 지 얼마 안 되신 분들의 경우 조금 생소하거나 어려울 수 있기에 Colab 코드도 같이 링크를 첨부해두었다.
+   - Data Science 공부를 시작한 지 얼마 안 되신 분들의 경우 조금 생소하거나 어려울 수 있기에 Colab 코드도 같이 링크를 첨부해두었다.
    
  - [Velog M1 Settings](https://velog.io/@heiswicked/series/M1Settings)
    - Colab뿐만 아니라, Apple M1, M2에서 실습할 수 있다.
