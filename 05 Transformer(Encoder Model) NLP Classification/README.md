@@ -58,7 +58,7 @@ $ python train.py --tokenizer "mecab" --grad_clipping True --bs 64 --ratio 0.8 -
 - `trainer_type` 
     - `original_trainer`: Accuracy를 실시간으로(=Batch가 Model을 지날 때마다) 계산하는 코드 ([original_trainer.py](https://github.com/renslightsaber/Torchs-Breath/blob/main/05%20Transformer(Encoder%20Model)%20NLP%20Classification/original_trainer.py))
     - `new_trainer`: [torchmetrics](https://torchmetrics.readthedocs.io/en/stable/)로 Accuracy와 F1 Score를 실시간으로(=Batch가 Model을 지날 때마다) 계산하는 코드 ([new_trainer.py](https://github.com/renslightsaber/Torchs-Breath/blob/main/05%20Transformer(Encoder%20Model)%20NLP%20Classification/new_trainer.py))   
-
+- `bs` : Batch Size (Default: 32) 
 - `grad_clipping`: [Gradient Clipping](https://neptune.ai/blog/understanding-gradient-clipping-and-how-it-can-fix-exploding-gradients-problem)
 - `hid_dim` : [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf)에서는 `d_model`에 해당 (Default: 256)
 - `pf_dim` : [positionwiseff.py](https://github.com/renslightsaber/Torchs-Breath/blob/main/05%20Transformer(Encoder%20Model)%20NLP%20Classification/positionwiseff.py)에서 `PositionwiseFeedForwardLayer`에서 `Head` 수 (Default: 512)
