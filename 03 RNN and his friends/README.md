@@ -27,8 +27,8 @@ $ python train.py --data_path "./data/bitcoin-historical-data.csv" --percent 1.0
 - `data_path` : 데이터가 저장된 위치. 다른 위치에 데이터를 다운 받았다면, 그 위치로 지정 가능하다. Default로 `data`폴더로 지정해두었다.
 - `percent` : 사용하고자하는 데이터의 양을 비율로 정할 수 있다.
 - `model` : `RNNModel`, `LSTMModelV1`, `LSTMModelV2`, `GRUModel`,  `BiRNNModel` 중에서 선택 가능
-- `hidden_size` : `nn.RNN()`, `nn.LSTM()`, `nn.GRU()` 의 `hidden_size`에 들어가는 값(int) 
-- `num_layers` : `nn.RNN()`, `nn.LSTM()`, `nn.GRU()` 의 `num_layers`에 들어가는 값(int) 
+- `hidden_size` : `nn.RNN()`, `nn.LSTM()`, `nn.GRU()` 의 `hidden_size`
+- `num_layers` : `nn.RNN()`, `nn.LSTM()`, `nn.GRU()` 의 `num_layers` 
 - `sl` : Sequence Length
 - `ratio` : 데이터를 Split하여 `train`(학습) 과 `valid`(성능 평가)를 만드는 비율을 의미. 정확히는 `train`의 Size를 결정한다.
 - `device`: GPU를 통한 학습이 가능하다면, `cuda`, `mps`(M1) 로 설정할 수 있다. 
