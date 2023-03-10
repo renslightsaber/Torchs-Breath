@@ -1,4 +1,3 @@
-Transformer Encoder 구현 및 실행
 # 05 Transformer(EncoderModel)NLP Cliassification
  - Data: [Dacon Basic 쇼핑몰 리뷰 평점 분류 경진대회](https://dacon.io/competitions/official/235938/overview/description)
     - 2022년에 Dacon에서 열려서 직계제자와 같이 (각자 개인으로) 참여한 대회인데, 어째서인지 지금은 링크가 막혀있다.   
@@ -18,9 +17,15 @@ Transformer Encoder 구현 및 실행
 
 
 ## About Github Code 
- 1. Jupyter Notebook이 아닌 Python Script로 생성
- 2. CLI에서 파라미터 값을 다양하게 변화를 주어서 실험 가능
- 3. 위 Velog에서와 코드는 조금 다르게 작성 
+ 1. Transformer Encoder Model의 기본적인 구조를 Pytorch 코드로 구현 
+   - References
+     - [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf)
+     - [wandb 트랜스포머(Transformer) 심층 분석](https://wandb.ai/wandb_fc/korean/reports/-Transformer---Vmlldzo0MDIyNDc)
+     - [bentrevett/pytorch-seq2seq/attention_is_all_you_need.ipynb](https://github.com/bentrevett/pytorch-seq2seq/blob/master/6%20-%20Attention%20is%20All%20You%20Need.ipynb)
+     - [hyunwoongko/transformer](https://github.com/hyunwoongko/transformer)
+ 2. Jupyter Notebook이 아닌 Python Script로 생성
+ 3. CLI에서 파라미터 값을 다양하게 변화를 주어서 실험 가능
+ 4. 위 Velog에서와 코드는 조금 다르게 작성 
 
 
 ## [Mecab](https://konlpy.org/ko/v0.4.0/install/)
@@ -56,7 +61,7 @@ $ python train.py --tokenizer "mecab" --grad_clipping True --bs 64 --ratio 0.8 -
 
 - `grad_clipping`: [Gradient Clipping](https://neptune.ai/blog/understanding-gradient-clipping-and-how-it-can-fix-exploding-gradients-problem)
 - `hid_dim` : [Attention is all you need](https://arxiv.org/pdf/1706.03762.pdf)에서는 `d_model`에 해당 (Default: 256)
-- `pf_dim` :  [positionwiseff.py](https://github.com/renslightsaber/Torchs-Breath/blob/main/05%20Transformer(Encoder%20Model)%20NLP%20Classification/positionwiseff.py)에서 `PositionwiseFeedForwardLayer`에서 `Head` 수 (Default: 512)
+- `pf_dim` : [positionwiseff.py](https://github.com/renslightsaber/Torchs-Breath/blob/main/05%20Transformer(Encoder%20Model)%20NLP%20Classification/positionwiseff.py)에서 `PositionwiseFeedForwardLayer`에서 `Head` 수 (Default: 512)
 - `n_heads` : `MultiHeadAttention`에서 `Head` 수 (Default: 8) 
 - `n_layers` : `EncoderLayer`의 수 (Default: 6)
 - `sl` : Sequence Length (Default: 90)
