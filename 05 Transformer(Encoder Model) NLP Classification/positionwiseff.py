@@ -4,6 +4,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 
+
+############ Positionwise FeedForward Layer ##############
 class PositionwiseFeedForwardLayer(nn.Module):
     def __init__(self, 
                  hid_dim, 
@@ -33,3 +35,5 @@ class PositionwiseFeedForwardLayer(nn.Module):
         # [bs, sl, hid_dim] ->  [bs, sl, hid_dim]
         
         return x
+    
+    
