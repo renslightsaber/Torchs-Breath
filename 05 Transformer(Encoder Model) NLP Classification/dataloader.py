@@ -1,11 +1,12 @@
 import numpy as np
 import pandas as pd
 
-# from sklearn.datasets import fetch_california_housing
-
 import torch
+import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
+
+############ MyDataset ################
 class MyDataset(Dataset):
     def __init__(self, 
                  df, 
@@ -49,7 +50,8 @@ class MyDataset(Dataset):
 
         return x, y # np.array
     
-  
+
+############### prepare_loaders ##################
 def prepare_loaders(df, korbow, tokenizer, sl, ratio = .6, bs = 2*64):
     
     index_num = int(df.shape[0] * ratio)
@@ -68,3 +70,6 @@ def prepare_loaders(df, korbow, tokenizer, sl, ratio = .6, bs = 2*64):
     
     print("DataLoader Completed")
     return train_loader, valid_loader
+
+
+
