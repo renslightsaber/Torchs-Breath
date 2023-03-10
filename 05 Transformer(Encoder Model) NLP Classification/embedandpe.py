@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 
 
-## Embed
+############# Embed ##################
 class Embed(nn.Module):
     def __init__(self, 
                  input_dim, 
@@ -24,8 +24,10 @@ class Embed(nn.Module):
         
         return self.scale * self.embed(x) 
         # [bs, sl, hid_dim] shape으로 return
+        
+        
 
-## Positional Encoding
+############### Positional Encoding ########################
 from torch.autograd import Variable
 
 class PositionalEncodingLayer(nn.Module):
