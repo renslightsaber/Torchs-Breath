@@ -1,10 +1,12 @@
 import numpy as np
+import pandas as pd
 
 import torch
 import torch.nn as nn
 
 from encoder import *
 
+################# Model #################
 class TransformerEncoderModel(nn.Module):
     def __init__(self, 
                  input_dim, 
@@ -33,6 +35,7 @@ class TransformerEncoderModel(nn.Module):
             nn.Linear(256, 4), 
             nn.LogSoftmax(dim=-1)
         )
+        
     
     def make_mask(self, src):
         sl = src.shape[1]
@@ -46,6 +49,7 @@ class TransformerEncoderModel(nn.Module):
         return pad_mask & sub_mask
         # x: [bs, sl] --> [bs, 1, 1, sl]
 
+        
     def forward(self, src):
         # src: [bs, sl] from DataLoader
         bs = src.shape[0]
@@ -63,3 +67,5 @@ class TransformerEncoderModel(nn.Module):
         # y: [bs, 4]
 
         return y
+
+    
